@@ -1,15 +1,22 @@
 package com.week2.task;
 
-public class HaksaServiceImpl implements HaksaService {
+public class HaksaServiceImpl extends StudentVO implements HaksaService {
+
+    public HaksaServiceImpl(String name, double middleScore, double finalScore) {
+        super(name, middleScore, finalScore);
+    }
 
     @Override
     public double getSum(double middleScore, double finalScore) {
+        super.setSum(middleScore + finalScore);
         return middleScore + finalScore;
     }
 
     @Override
     public double getAvg(double middleScore, double finalScore) {
-        return getSum(middleScore, finalScore) / 2;
+        double avg = getSum(middleScore, finalScore) / 2;
+        super.setAvg(avg);
+        return avg;
     }
 
     @Override
@@ -22,11 +29,14 @@ public class HaksaServiceImpl implements HaksaService {
         else if (score >= 60 && score <= 65) hak = 'D';
         else hak = 'F';
 
+        super.setHak(hak);
         return hak;
     }
 
     @Override
     public String getPass(char hak) {
-        return hak <= 'B' ? "합격" : "불합격";
+        String pass = hak <= 'B' ? "합격" : "불합격";
+        super.setPass(pass);
+        return pass;
     }
 }

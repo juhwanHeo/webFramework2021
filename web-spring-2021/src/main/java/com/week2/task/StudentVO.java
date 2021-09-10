@@ -18,6 +18,15 @@ public class StudentVO {
         decimalFormat.setMaximumFractionDigits(2);
     }
 
+    public StudentVO(String name, double middleScore, double finalScore) {
+        this.name = name;
+        this.middleScore = middleScore;
+        this.finalScore = finalScore;
+
+        decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(2);
+    }
+
     public String getName() {
         return name;
     }

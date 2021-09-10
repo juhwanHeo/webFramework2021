@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class HaksaApp {
 
     public static void main(String[] args) {
-        HaksaService service = new HaksaServiceImpl();
         StudentVO studentVO = new StudentVO();
         Scanner sc = new Scanner(System.in);
 
@@ -13,20 +12,22 @@ public class HaksaApp {
         String name = sc.next();
         double middleScore = sc.nextDouble();
         double finalScore = sc.nextDouble();
+        sc.close();
+
+        HaksaService service = new HaksaServiceImpl(name, middleScore, finalScore);
         double sum = service.getSum(middleScore, finalScore);
         double avg = service.getAvg(middleScore, finalScore);
         char hak = service.getHak(avg);
         String pass = service.getPass(hak);
-        sc.close();
 
-        studentVO.setName(name);
-        studentVO.setMiddleScore(middleScore);
-        studentVO.setFinalScore(finalScore);
+//        studentVO.setName(name);
+//        studentVO.setMiddleScore(middleScore);
+//        studentVO.setFinalScore(finalScore);
         studentVO.setSum(sum);
         studentVO.setAvg(avg);
         studentVO.setHak(hak);
         studentVO.setPass(pass);
-        System.out.println(studentVO);
+        System.out.println(service);
 
     }
 }
