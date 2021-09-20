@@ -6,7 +6,7 @@ public class Task4 extends HaksaVO implements HaksaService {
 	
 	/*
 	 * 인터페이스를 적용
-	 * 객체 지향적 프로그래밍 구조
+	 * 객채 지향적 프로그래밍 구조
 	 * 결합도를 낮추기 위해 인터페이스 사용
 	*/
 	@Override
@@ -34,8 +34,8 @@ public class Task4 extends HaksaVO implements HaksaService {
 	@Override
 	public void print() {
 		System.out.println("이름: " + name);
-		System.out.println("총점: " + sum());
-		System.out.printf("평균: %.2f\n", avg());
+		System.out.println("총점: " + sum);
+		System.out.printf("평균 %.2f\n", avg);
 	}
 	
 	public static void main(String[] args) {

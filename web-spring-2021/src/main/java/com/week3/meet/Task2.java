@@ -7,7 +7,7 @@ public class Task2 {
 	/*
 	 * 객채적 프로그래밍 구조
 	 * 생성자 default
-	 * 메소드 4개 - 입력, 
+	 * 메소드 4개 - 입력,
 	*/
 	private String name;
 	private int middleScore;
@@ -36,8 +36,8 @@ public class Task2 {
 	
 	public void print() {
 		System.out.println("이름: " + name);
-		System.out.println("총점: " + sum());
-		System.out.printf("평균: %.2f\n", avg());
+		System.out.println("총점: " + sum);
+		System.out.printf("평균 %.2f\n", avg);
 	}
 	
 	public static void main(String[] args) {
