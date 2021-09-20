@@ -6,7 +6,7 @@ public class DITest {
         Exam exam = new NewExam();
         exam.input();
 
-        ExamPrint p = new InlineExamPrint(exam); // DI êµ¬ì¡°
+        ExamPrint p = new InlineExamPrint(exam); // DI ±¸Á¶
         p.print();
     }
 }

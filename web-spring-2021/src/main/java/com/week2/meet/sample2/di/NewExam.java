@@ -28,6 +28,6 @@ public class NewExam implements Exam {
 
     @Override
     public String toString() {
-        return String.format("두 점수의 합은 %d 이고, 평균은 %.2f입니다.", total(), avg());
+        return String.format("두 점수의 합은 %d이고, 평균은 %.2f입니다.", total(), avg());
     }
 }

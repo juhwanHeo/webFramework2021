@@ -29,8 +29,8 @@ public class Task3 extends HaksaVO {
 	
 	public void print() {
 		System.out.println("이름: " + name);
-		System.out.println("총점: " + sum());
-		System.out.printf("평균: %.2f\n", avg());
+		System.out.println("총점: " + sum);
+		System.out.printf("평균 %.2f\n", avg);
 	}
 	
 	public static void main(String[] args) {

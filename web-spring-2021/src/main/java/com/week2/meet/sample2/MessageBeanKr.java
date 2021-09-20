@@ -4,6 +4,6 @@ public class MessageBeanKr implements MessageBean{
 
     @Override
     public void sayHello(String name) {
-        System.out.println("ì•ˆë…•í•˜ì„¸ìš”, " + name + "!!!");
+        System.out.println("¾È³çÇÏ¼¼¿ä, " + name + "!!!");
     }
 }
