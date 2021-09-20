@@ -2,7 +2,7 @@ package com.week4.task.before2.Create;
 
 
 /*
- * 디자인 생성 패턴: 싱글톤
+ * 디자인 생성 패턴: 싱글톤 
  * https://coding-factory.tistory.com/709
 */
 public class Singleton {
