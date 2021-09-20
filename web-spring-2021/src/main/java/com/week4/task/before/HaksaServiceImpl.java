@@ -27,7 +27,7 @@ public class HaksaServiceImpl extends StudentVO implements HaksaService {
 
     @Override
     public String pass(char hak) {
-        return hak <= 'B' ? "합격" : "불합격";
+        return hak <= 'B' ? "합격" : "블합격";
     }
 
     @Override

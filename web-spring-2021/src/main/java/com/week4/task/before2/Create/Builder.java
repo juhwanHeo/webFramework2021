@@ -1,7 +1,7 @@
 package com.week4.task.before2.Create;
 
 /*
- * µğÀÚÀÎ »ı¼º ÆĞÅÏ: ºô´õ
+ * ë””ìì¸ ìƒì„± íŒ¨í„´: ë¹Œë”
  * https://readystory.tistory.com/121
 */
 class User {
@@ -72,7 +72,7 @@ public class Builder {
 		User user = new User.UserBuilder()
 				.setName("Heo")
 				.setAge(23)
-				.setAddr("°æ±âµµ")
+				.setAddr("ï¿½ï¿½âµµ")
 				.build();
 		
 		System.out.println(user);
