@@ -2,7 +2,7 @@ package com.week4.task.before2.Create;
 
 
 /*
- * µğÀÚÀÎ »ı¼º ÆĞÅÏ: ½Ì±ÛÅæ 
+ * ë””ìì¸ ìƒì„± íŒ¨í„´: ì‹±ê¸€í†¤ 
  * https://coding-factory.tistory.com/709
 */
 public class Singleton {

@@ -1,7 +1,7 @@
 package com.week4.task.before2.Create;
 
 /*
- * µğÀÚÀÎ »ı¼º ÆĞÅÏ: Ãß»ó ÆÑÅä¸®
+ * ë””ìì¸ ìƒì„± íŒ¨í„´: ì¶”ìƒ íŒ©í† ë¦¬
  * https://bamdule.tistory.com/161
 */
 interface Factory {
