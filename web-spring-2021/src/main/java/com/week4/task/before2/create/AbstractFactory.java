@@ -1,4 +1,4 @@
-package com.week4.task.before2.Create;
+package com.week4.task.before2.create;
 
 /*
  * 디자인 생성 패턴: 추상 팩토리
