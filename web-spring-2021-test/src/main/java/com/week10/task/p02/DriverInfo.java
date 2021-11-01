@@ -1,6 +1,6 @@
-package com.week05.task.p01;
+package com.week10.task.p02;
 
-public class DriverInfo implements Print {
+public class DriverInfo implements Driver {
 	private String name;
 	private Car car;
 	

@@ -1,4 +1,4 @@
-package com.week4.task.p03;
+package com.week04.task.p03;
 
 public class KrPrint implements Print {
 	private Name name;

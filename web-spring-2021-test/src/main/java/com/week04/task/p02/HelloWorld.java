@@ -1,4 +1,4 @@
-package com.week4.task.p02;
+package com.week04.task.p02;
 
 public class HelloWorld {
 	private String meassge;

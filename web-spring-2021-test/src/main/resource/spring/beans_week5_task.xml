@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	
-	<bean id="baseDriver" class="com.week5.task.p01.DriverInfo" abstract="true">
+	<bean id="baseDriver" class="com.week05.task.p01.DriverInfo" abstract="true">
 		<property name="name" value="juhwan" />
 		<property name="car" ref="baseCar"/>
 	</bean>
@@ -18,12 +18,12 @@
 		<property name="car" ref="sportsCar" />
 	</bean> 
 
-	<bean id="baseCar" class="com.week5.task.p01.Car">
+	<bean id="baseCar" class="com.week05.task.p01.Car">
 		<property name="type" value="base" />
 		<property name="color" value="red" />
 	</bean>
 	
-	<bean id="sportsCar" class="com.week5.task.p01.Car">
+	<bean id="sportsCar" class="com.week05.task.p01.Car">
 		<property name="type" value="sports" />
 		<property name="color" value="blue" />
 	</bean>

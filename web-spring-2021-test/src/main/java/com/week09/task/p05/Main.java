@@ -1,9 +1,9 @@
-package com.week9.task.p05;
+package com.week09.task.p05;
 
 import java.lang.reflect.Method;
 
-import com.week9.task.p03.PrtAnnotation;
-import com.week9.task.p03.Service;
+import com.week09.task.p03.PrtAnnotation;
+import com.week09.task.p03.Service;
 
 public class Main {
 	public static void main(String[] args) {

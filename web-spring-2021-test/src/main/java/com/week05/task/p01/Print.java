@@ -1,4 +1,4 @@
-package com.week5.task.p01;
+package com.week05.task.p01;
 
 public interface Print {
 	void show();

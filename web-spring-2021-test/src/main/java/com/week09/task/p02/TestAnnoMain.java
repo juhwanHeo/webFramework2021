@@ -1,4 +1,4 @@
-package com.week9.task.p02;
+package com.week09.task.p02;
 
 import java.lang.annotation.Annotation;
 

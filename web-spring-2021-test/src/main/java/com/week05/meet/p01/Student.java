@@ -1,4 +1,4 @@
-package com.week5.meet.p01;
+package com.week05.meet.p01;
 
 public class Student {
 	private String name;

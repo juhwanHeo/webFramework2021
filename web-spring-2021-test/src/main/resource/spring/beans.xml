@@ -5,19 +5,19 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="hi" class="com.week4.task.p02.HelloWorld">
+	<bean id="hi" class="com.week04.task.p02.HelloWorld">
 		<property name="meassge" value="안녕하세요~" />
 	</bean>
 
-	<bean id="name" class="com.week4.task.p03.Name">
+	<bean id="name" class="com.week04.task.p03.Name">
 		<property name="name" value="스프링 세터" />
 	</bean>
 	
-	<bean id="name2" class="com.week4.task.p03.Name">
+	<bean id="name2" class="com.week04.task.p03.Name">
 		<constructor-arg name="name" value="스프링 생성자"/>
 	</bean>
 	
-	<bean id="kp" class="com.week4.task.p03.KrPrint">
+	<bean id="kp" class="com.week04.task.p03.KrPrint">
 		<constructor-arg ref="name2"/>
 	</bean>
 	

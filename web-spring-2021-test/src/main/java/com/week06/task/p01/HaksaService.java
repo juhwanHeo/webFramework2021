@@ -1,4 +1,4 @@
-package com.week6.task.p01;
+package com.week06.task.p01;
 
 public interface HaksaService {
 	double sum();

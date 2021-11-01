@@ -4,26 +4,26 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	
-	<bean id="baseStudent" class="com.week6.meet.p01.Student" abstract="true">
+	<bean id="baseStudent" class="com.week06.meet.p01.Student" abstract="true">
 		<property name="collegeName" value="한림대학교" />
 		<property name="affiliation" value="소프트웨어 융합대학" />
 	</bean>
 
-	<bean id="nagildong" class="com.week6.meet.p01.Student" parent="baseStudent">
+	<bean id="nagildong" class="com.week06.meet.p01.Student" parent="baseStudent">
 		<property name="name" value="나길동" />
 		<property name="major" value="소프트웨어" />
 		<property name="student_id" value="20181234" />
 		<property name="hakjum" value="135" />
 	</bean>
 	
-	<bean id="jedong" class="com.week6.meet.p01.Student" parent="baseStudent">
+	<bean id="jedong" class="com.week06.meet.p01.Student" parent="baseStudent">
 		<property name="name" value="제동이" />
 		<property name="major" value="기술 융합" />
 		<property name="student_id" value="20195678" />
 		<property name="hakjum" value="117" />
 	</bean>
 	
-	<bean id="haksa" class="com.week6.meet.p01.HaksaServiceImpl" >
+	<bean id="haksa" class="com.week06.meet.p01.HaksaServiceImpl" >
 		<property name="student" ref="nagildong" />
 	</bean>
 	

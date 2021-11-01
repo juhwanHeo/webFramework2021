@@ -1,4 +1,4 @@
-package com.week05.task.p01;
+package com.week10.task.p02;
 
 public class Car {
 	private String type;

@@ -1,7 +1,7 @@
-package com.week4.task.p03;
+package com.week04.task.p03;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class Main {
 	public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class Main {
 		kp.setName(np);
 		kp.show();
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext("src/main/resource/spring/beans.xml");
 		KrPrint newp = (KrPrint) context.getBean("kp");
 		newp.show();
 		

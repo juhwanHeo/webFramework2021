@@ -1,4 +1,4 @@
-package com.week6.meet.p01;
+package com.week06.meet.p01;
 
 
 public class Main {

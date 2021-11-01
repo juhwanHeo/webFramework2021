@@ -1,4 +1,4 @@
-package com.week6.task.p01;
+package com.week06.task.p01;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

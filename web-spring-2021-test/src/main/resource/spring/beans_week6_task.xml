@@ -9,18 +9,18 @@
 
 	<context:annotation-config />
 	
-	<bean id="juhwan" class="com.week6.task.p01.Student">
+	<bean id="juhwan" class="com.week06.task.p01.Student">
 		<property name="name" value="juhwan" />
 		<property name="middleScore" value="80" />
 		<property name="finalScore" value="90" />
 	</bean>
 
-	<bean id="heojuhwan" class="com.week6.task.p01.Student">
+	<bean id="heojuhwan" class="com.week06.task.p01.Student">
 		<property name="name" value="heojuhwan" />
 		<property name="middleScore" value="40" />
 		<property name="finalScore" value="83" />
 	</bean>
 
-	<bean id="haksa" class="com.week6.task.p01.HaksaServiceImpl"/>
+	<bean id="haksa" class="com.week06.task.p01.HaksaServiceImpl"/>
 
 </beans>
