@@ -36,7 +36,10 @@ local.properties
 .buildpath
 
 # sbteclipse plugin
-.target/*
+*/target/*
+
+*/META-INF/*
+
 
 # Tern plugin
 .tern-project
