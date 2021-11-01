@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<aop:aspectj-autoproxy />
+	
+	<bean id="sportsDriver" class="com.week10.task.p02.DriverInfo" >
+		<property name="name" value="juhwanHeo" />
+		<property name="car" ref="sportsCar" />
+	</bean> 
+	
+	<bean id="sportsCar" class="com.week10.task.p02.Car">
+		<property name="type" value="sports" />
+		<property name="color" value="red" />
+	</bean>
+	
+	<bean id="xmlAdvice" class="com.week10.task.p02.CarAdvice"/>
+	
+</beans>

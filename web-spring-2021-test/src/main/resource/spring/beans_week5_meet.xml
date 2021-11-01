@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="juhwan" class="com.week05.meet.p01.Student">
+		<property name="name" value="juhwan" />
+		<property name="middleScore" value="80"/>
+		<property name="finalScore" value="90"/>
+	</bean>
+	
+	<bean id="heojuhwan" class="com.week05.meet.p01.Student">
+		<property name="name" value="heojuhwan" />
+		<property name="middleScore" value="40"/>
+		<property name="finalScore" value="83"/>
+	</bean>
+	
+	<bean id="haksa" class="com.week05.meet.p01.HaksaServiceImpl">
+		<property name="student" ref="heojuhwan" />
+	</bean>
+	
+</beans>

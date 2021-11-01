@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<bean id="sportsDriver" class="com.week10.task.p01.DriverInfo" >
+		<property name="name" value="juhwan" />
+		<property name="car" ref="sportsCar" />
+	</bean> 
+	
+	<bean id="sportsCar" class="com.week10.task.p01.Car">
+		<property name="type" value="sports" />
+		<property name="color" value="blue" />
+	</bean>
+	
+	<bean id="xmlAdvice" class="com.week10.task.p01.CarAdvice"/>
+	<aop:config>
+		<aop:pointcut expression="execution(public * com.week10.task.p01..*.show(..))" id="pointcut"/>
+		
+		<aop:aspect ref="xmlAdvice">
+			<aop:before pointcut-ref="pointcut" method="beforeAdvice"/>
+			<aop:after pointcut-ref="pointcut" method="afterAdvice"/>
+			<aop:around pointcut-ref="pointcut" method="aroundAdvice"/> 
+		</aop:aspect>
+	</aop:config> 
+	
+</beans>

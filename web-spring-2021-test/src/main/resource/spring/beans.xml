@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="hi" class="com.week04.task.p02.HelloWorld">
+		<property name="meassge" value="안녕하세요~" />
+	</bean>
+
+	<bean id="name" class="com.week04.task.p03.Name">
+		<property name="name" value="스프링 세터" />
+	</bean>
+	
+	<bean id="name2" class="com.week04.task.p03.Name">
+		<constructor-arg name="name" value="스프링 생성자"/>
+	</bean>
+	
+	<bean id="kp" class="com.week04.task.p03.KrPrint">
+		<constructor-arg ref="name2"/>
+	</bean>
+	
+</beans>
