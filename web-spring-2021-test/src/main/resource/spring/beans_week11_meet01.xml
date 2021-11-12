@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	
+	<bean id="itemTarget" class="com.week11.meet.p01.ItemTarget"/>
+	<bean id="kimsTarget" class="com.week11.meet.p01.KimsTarget"/>
+	
+	<bean id="loggingAdvice" class="com.week11.meet.p01.LoggingAdvice"/>
+
+	
+	<aop:config>
+		
+		<aop:aspect ref="loggingAdvice">
+			<aop:before pointcut="execution(public * com.week11.meet.p01.ItemTarget.*(..))" method="beforeAdvice"/>
+			
+			<aop:before pointcut="execution(public * com.week11.meet.p01.ItemTarget.buyItem(..))" method="beforeAdvice2"/>
+			
+			<aop:after pointcut="execution(public * com.week11.meet.p01.*Target.buy*(..))" method="afterAdvice"/>
+			
+			<aop:around pointcut="execution(public * com.week11.meet.p01.*Target.buy*(..))" method="aroundAdvice"/>
+		</aop:aspect>
+	</aop:config> 
+	
+</beans>
