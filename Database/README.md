@@ -1,6 +1,5 @@
-# BusLocationTrackServer
-## Database : MariaDB
-### docker ([참고](https://logical-code.tistory.com/122))
+# Database : MariaDB
+## docker ([참고](https://logical-code.tistory.com/122))
 
 
 ```bash
