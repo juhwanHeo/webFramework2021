@@ -25,7 +25,14 @@
 	
 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+		<!-- mac -->
+		<!--
 		<beans:property name="url" value="jdbc:mysql://localhost:3306/test?serverTimezone=UTC"/>
+		-->
+		<!-- desktop -->
+		
+		<beans:property name="url" value="jdbc:mysql://192.168.99.101:3306/test?serverTimezone=UTC"/>
+		
 		<beans:property name="username" value="root"/>	
 		<beans:property name="password" value="mariadb"/>		
 	</beans:bean>
