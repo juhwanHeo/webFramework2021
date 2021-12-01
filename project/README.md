@@ -19,25 +19,41 @@
 ```
 
 ## 1, DB 구성
-### ERD
+- ### ERD
 ![ERD_211201](https://user-images.githubusercontent.com/47820142/144185837-f00756b4-580a-472e-a1a2-c514d51f28df.PNG)
 
-#### Student
- - 학생 정보 테이블
+  - #### Student
+    - 학생 정보 테이블
 
-#### Entrance_grade 
- - 학생 입시점수 테이블
+  - #### Entrance_grade 
+    - 학생 입시점수 테이블
 
-#### Dae_cd
- - 대코드 테이블
+  - #### Dae_cd
+    - 대코드 테이블
 
-#### So_cd
- - 소코드 테이블
+  - #### So_cd
+    - 소코드 테이블
+
+ - ### 쿼리 예시 
+  ```sql
+  select 
+      ss.*
+       , (select so_nm from so_cd  where so_code = eg.exam_type) as exam_type
+       , eg.score 
+       , eg.csat_score 
+       , eg.entrance_yn 
+  from 
+       student ss
+       , entrance_grade eg
+  where 1=1
+       AND ss.id = eg.id
+  ```
+ - ### 쿼리 결과 
+|id|name|age|exam_type|score|csat_score|entrance_yn|
+|---|---|---|---|---|---|---|
+|juhwan|허주환|23|수시 학생부교과전형|83.3|-1|Y|
  
 ## 2, TODO(21.12.01)
  - 대학교 테이블 생성 후 대학교 별로 학생들 부정 입학 여부 판단하기
  - Entrance_grade 테이블의 `exam_type` 컬럼을 주 키로 변경하기
    - 한 학생이 여러 입시 전형을 넣을 수 있기에 변경 필요 
-
-
- 
