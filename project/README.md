@@ -17,10 +17,17 @@
 
 7. 기타 : 수업 시간에 프로젝트 관련 자세한 설명합니다.
 ```
+## 1, 세부 주제 : 대학 입학 시험 정보를 활용한 부정입학을 필터하기
 
-## 1, DB 구성
+## 2, DB 구성
 - ### ERD
-![ERD_211201](https://user-images.githubusercontent.com/47820142/144185837-f00756b4-580a-472e-a1a2-c514d51f28df.PNG)
+![ERD_211208](https://user-images.githubusercontent.com/47820142/145184841-12ade7d8-9d57-49ca-964c-8ac08278f295.PNG)
+
+  - #### College 
+    - 대학 정보 테이블
+
+  - #### College 
+    - 대학 입학 시헙 정보 테이블
 
   - #### Student
     - 학생 정보 테이블
@@ -35,25 +42,71 @@
     - 소코드 테이블
 
  - ### 쿼리 예시 
+ #### 부정입학이 `아닌경우`
   ```sql
-  select 
-      ss.*
-       , (select so_nm from so_cd  where so_code = eg.exam_type) as exam_type
-       , eg.score 
-       , eg.csat_score 
-       , eg.entrance_yn 
-  from 
-       student ss
-       , entrance_grade eg
-  where 1=1
-       AND ss.id = eg.id
+SELECT 
+	cc.*
+	,eg.id 
+	, sd.name 
+	, ce.exam_type 
+	, (select so_nm from so_cd  where so_code = ce.exam_type) as exam_type_nm
+	, ce.min_csat_score 
+	, ce.min_score 
+	, eg.csat_score 
+	, eg.score 
+	, eg.entrance_yn 
+FROM 
+	college cc
+	, college_exam ce
+	, entrance_grade eg
+	, student sd
+WHERE 1=1 
+	AND cc.college_id = ce.college_id
+	AND cc.college_id = eg.college_id 
+	AND ce.exam_type = eg.exam_type
+	AND sd.id = eg.id
+	AND cc.college_id = 1
+	AND ce.exam_type = '001001'
+	AND eg.score >= ce.min_score
+	AND eg.csat_score <= ce.min_csat_score;
   ```
  - ### 쿼리 결과 
-|id|name|age|exam_type|score|csat_score|entrance_yn|
-|---|---|---|---|---|---|---|
-|juhwan|허주환|23|수시 학생부교과전형|83.3|-1|Y|
+|college_id|college_nm|id|name|exam_type|exam_type_nm|min_csat_score|min_score|csat_score|score|entrance_yn|
+|---|---|---|---|---|---|---|---|---|---|---|
+|1|한국대학교|juhwan|허주환|001001|수시 학생부교과전형|2.00|70.34|1.92|83.30|Y|
+
+#### `부정입학인 경우`
+  ```sql
+SELECT 
+	cc.*
+	,eg.id 
+	, sd.name 
+	, ce.exam_type 
+	, (select so_nm from so_cd  where so_code = ce.exam_type) as exam_type_nm
+	, ce.min_csat_score 
+	, ce.min_score 
+	, eg.csat_score 
+	, eg.score 
+	, eg.entrance_yn 
+FROM 
+	college cc
+	, college_exam ce
+	, entrance_grade eg
+	, student sd
+WHERE 1=1 
+	AND cc.college_id = ce.college_id
+	AND cc.college_id = eg.college_id 
+	AND ce.exam_type = eg.exam_type
+	AND sd.id = eg.id
+	AND cc.college_id = 1
+	AND ce.exam_type = '001001'
+	AND (eg.score < ce.min_score OR eg.csat_score > ce.min_csat_score)
+  ```
+ - ### 쿼리 결과 
+|college_id|college_nm|id|name|exam_type|exam_type_nm|min_csat_score|min_score|csat_score|score|entrance_yn|
+|---|---|---|---|---|---|---|---|---|---|---|
+|1|한국대학교|bujung|김부정|001001|수시 학생부교과전형|2.00|70.34|2.1|73.38|Y|
  
-## 2, TODO(21.12.01)
- - 대학교 테이블 생성 후 대학교 별로 학생들 부정 입학 여부 판단하기
- - Entrance_grade 테이블의 `exam_type` 컬럼을 주 키로 변경하기
-   - 한 학생이 여러 입시 전형을 넣을 수 있기에 변경 필요 
+## 2, TODO(21.12.08)
+ - ### 1, 테스트 데이터 생성 및 테스트
+ - ### 2, 부정입학한 학생일 경우 css 변경
