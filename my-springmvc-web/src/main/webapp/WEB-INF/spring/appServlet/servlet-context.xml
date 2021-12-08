@@ -21,20 +21,38 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.spring.mvc" />
+	<context:component-scan base-package="com.project" />
 	
-	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<!-- <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-		<!-- mac -->
-		<!--
+		mac
+		
 		<beans:property name="url" value="jdbc:mysql://localhost:3306/test?serverTimezone=UTC"/>
-		-->
-		<!-- desktop -->
 		
+		desktop
 		<beans:property name="url" value="jdbc:mysql://192.168.99.101:3306/test?serverTimezone=UTC"/>
-		
 		<beans:property name="username" value="root"/>	
 		<beans:property name="password" value="mariadb"/>		
+	</beans:bean> -->
+	<!-- MariaDB JDBC DataSource -->
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+		<beans:property name="url" value="jdbc:mysql://192.168.99.101:3306/project?serverTimezone=UTC"/>
+        <beans:property name="username" value="root"/>
+        <beans:property name="password" value="mariadb"/>
+	</beans:bean>
+    
+	<!-- mybatis SqlSessionFactoryBean -->
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="configLocation" value="classpath:/mybatis-config.xml" />
+       	<beans:property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml" />
+	</beans:bean>
+	
+	<!-- MapperConfigurer setup for MyBatis Database Layer with @Mapper("deptMapper") in DeptMapper Interface -->
+ 	<beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<beans:property name="basePackage" value="com.project.dao" />
+		<beans:property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</beans:bean>
 	
 </beans:beans>

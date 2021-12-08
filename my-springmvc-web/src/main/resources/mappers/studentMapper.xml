@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.dao.StudentDAO">
+	
+	<select id="getList" resultType="com.project.vo.EntranceGrade">
+		SELECT 
+			eg.id 
+			, sd.name 
+			, cc.*
+			, ce.exam_type 
+			, (select so_nm from so_cd  where so_code = ce.exam_type) as exam_type_nm
+			, ce.min_csat_score 
+			, ce.min_score 
+			, eg.csat_score 
+			, eg.score 
+			, eg.entrance_yn 
+		FROM 
+			college cc
+			, college_exam ce
+			, entrance_grade eg
+			, student sd
+		WHERE 1=1 
+			AND cc.college_id = ce.college_id
+			AND cc.college_id = eg.college_id 
+			AND ce.exam_type = eg.exam_type
+			AND sd.id = eg.id
+			AND cc.college_id = #{college_id}
+			AND ce.exam_type = #{exam_type}
+			
+     </select>
+     
+     <select id="getPassList" resultType="com.project.vo.EntranceGrade">
+		SELECT 
+			eg.id 
+			, sd.name 
+			, cc.*
+			, ce.exam_type 
+			, (select so_nm from so_cd  where so_code = ce.exam_type) as exam_type_nm
+			, ce.min_csat_score 
+			, ce.min_score 
+			, eg.csat_score 
+			, eg.score 
+			, eg.entrance_yn 
+		FROM 
+			college cc
+			, college_exam ce
+			, entrance_grade eg
+			, student sd
+		WHERE 1=1 
+			AND cc.college_id = ce.college_id
+			AND cc.college_id = eg.college_id 
+			AND ce.exam_type = eg.exam_type
+			AND sd.id = eg.id
+			AND cc.college_id = #{college_id}
+			AND ce.exam_type = #{exam_type}
+			AND <![CDATA[
+					eg.score >= ce.min_score
+				]]>
+			AND <![CDATA[
+					eg.csat_score <= ce.min_csat_score
+				]]>			
+     </select>
+     
+     <select id="getFailList" resultType="com.project.vo.EntranceGrade">
+		SELECT 
+			eg.id 
+			, sd.name 
+			, cc.*
+			, ce.exam_type 
+			, (select so_nm from so_cd  where so_code = ce.exam_type) as exam_type_nm
+			, ce.min_csat_score 
+			, ce.min_score 
+			, eg.csat_score 
+			, eg.score 
+			, eg.entrance_yn 
+		FROM 
+			college cc
+			, college_exam ce
+			, entrance_grade eg
+			, student sd
+		WHERE 1=1 
+			AND cc.college_id = ce.college_id
+			AND cc.college_id = eg.college_id 
+			AND ce.exam_type = eg.exam_type
+			AND sd.id = eg.id
+			AND cc.college_id = #{college_id}
+			AND ce.exam_type = #{exam_type}
+			AND <![CDATA[
+					( eg.score < ce.min_score
+				]]>
+			OR <![CDATA[
+					eg.csat_score > ce.min_csat_score)
+				]]>			
+			
+     </select>
+     
+</mapper>
