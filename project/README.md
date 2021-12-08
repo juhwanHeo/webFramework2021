@@ -19,7 +19,9 @@
 ```
 ## 1, 세부 주제 : 대학 입학 시험 정보를 활용한 부정입학을 필터하기
 
-## 2, DB 구성
+## 2, ORM : Mybatis [(참고1)](https://ming9mon.tistory.com/64), [(참고2)](https://twofootdog.github.io/Spring-DAO%EC%99%80-Mapper%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/)
+
+## 3, DB: Mariadb
 - ### ERD
 ![ERD_211208](https://user-images.githubusercontent.com/47820142/145184841-12ade7d8-9d57-49ca-964c-8ac08278f295.PNG)
 
