@@ -1,5 +1,7 @@
 package com.project.vo;
 
+import java.util.Objects;
+
 public class EntranceGrade {
 	private String college_id;
 	private String id;
@@ -102,7 +104,29 @@ public class EntranceGrade {
 	public void setMin_Csat_score(double min_Csat_score) {
 		this.min_csat_score = min_Csat_score;
 	}
+	
+	public boolean isPass() {
+		return this.entrance_yn.equals("Y");
+	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(college_id, exam_type, id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EntranceGrade other = (EntranceGrade) obj;
+		return Objects.equals(college_id, other.college_id) && Objects.equals(exam_type, other.exam_type)
+				&& Objects.equals(id, other.id);
+	}
+	
 	@Override
 	public String toString() {
 		return "EntranceGrade [college_id=" + college_id + ", id=" + id + ", exam_type=" + exam_type + ", score="

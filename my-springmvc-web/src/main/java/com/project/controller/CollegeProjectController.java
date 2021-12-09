@@ -51,7 +51,7 @@ public class CollegeProjectController {
 		
 		List<CollegeExam> list = collegeExamService.getList(map);
 		
-		logger.info("[list.do] list: " + list);
+		logger.info("[/exam/list.do] list: " + list);
 		model.addAttribute("collegeExamList", list);
 		return "project/college/exam/list";
 	}
@@ -74,6 +74,7 @@ public class CollegeProjectController {
 		model.addAttribute("examStudentList", studentList);
 		model.addAttribute("passList", studentFilter.get("passList"));
 		model.addAttribute("failList", studentFilter.get("failList"));
+		model.addAttribute("bujungList", studentFilter.get("bujungList"));
 		return "project/college/exam/student/list";
 	}
 
