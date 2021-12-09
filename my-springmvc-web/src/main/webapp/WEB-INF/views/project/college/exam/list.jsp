@@ -7,12 +7,12 @@
 <head>
 	<title>등록된 내용</title>
 </head>
-<body>
-	<h1>리스트 화면</h1> 
+<body> 
+	<h1>${collegeExamList.get(0).college_nm} 전형 리스트 화면</h1> 
 	
 	<table border="1">
 		<tr>
-			<th>대학명</th>
+			<th>대학명 </th>
 			<th>전형</th>
 			<th>최소 수시 점수</th>
 			<th>최소 수능 점수</th>
@@ -25,9 +25,9 @@
 			<td>${item.min_score}</td>
 			<td>${item.min_csat_score}</td>
 			<td><a href="${pageContext.request.contextPath}/project/college/exam/student/list.do?college_id=${item.college_id}&exam_type=${item.exam_type}">학생 보기</a></td>
-			
 		<tr>
 		</c:forEach>
 	</table>
+	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/project/item/home.jsp"/> 
 </body> 
 </html>

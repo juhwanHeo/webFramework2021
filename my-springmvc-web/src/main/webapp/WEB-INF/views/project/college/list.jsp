@@ -8,7 +8,7 @@
 	<title>등록된 내용</title>
 </head>
 <body>
-	<h1>리스트 화면</h1> 
+	<h1>대학 리스트 화면</h1> 
 	
 	<table border="1">
 		<tr>
