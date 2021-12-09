@@ -109,6 +109,7 @@ WHERE 1=1
 |---|---|---|---|---|---|---|---|---|---|---|
 |1|한국대학교|bujung|김부정|001001|수시 학생부교과전형|2.00|70.34|2.1|73.38|Y|
  
-## 2, TODO(21.12.08)
- - ### 1, 테스트 데이터 생성 및 테스트
- - ### 2, 부정입학한 학생일 경우 css 변경
+## 2, Change Logs
+  - [2021.12.01.md](https://github.com/juhwanHeo/webFramework2021/blob/main/project/changeLogs/21.12.01.md)
+  - [2021.12.08.md](https://github.com/juhwanHeo/webFramework2021/blob/main/project/changeLogs/21.12.08.md)
+  - [2021.12.09.md](https://github.com/juhwanHeo/webFramework2021/blob/main/project/changeLogs/21.12.09.md)
