@@ -28,7 +28,7 @@
   - #### College 
     - 대학 정보 테이블
 
-  - #### College 
+  - #### College_exam  
     - 대학 입학 시헙 정보 테이블
 
   - #### Student
