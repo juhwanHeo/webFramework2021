@@ -21,7 +21,7 @@
 
 ## 2, ORM : Mybatis [(참고1)](https://ming9mon.tistory.com/64), [(참고2)](https://twofootdog.github.io/Spring-DAO%EC%99%80-Mapper%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/)
 
-## 3, DB: Mariadb
+## 3, DB: [Mariadb](https://github.com/juhwanHeo/webFramework2021/tree/main/Database)
 - ### ERD
 ![ERD_211208](https://user-images.githubusercontent.com/47820142/145184841-12ade7d8-9d57-49ca-964c-8ac08278f295.PNG)
 
