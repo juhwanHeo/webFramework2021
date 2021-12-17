@@ -27,21 +27,42 @@
 
   - #### College 
     - 대학 정보 테이블
+    	- college_id - 대학교 아이디 
+    	- college_nm - 대학교 명
 
   - #### College_exam  
     - 대학 입학 시험 정보 테이블
+    	- college_id - 대학교 아이디 
+    	- exam_type - 입시 시험 종류
+    	- min_score - 수시 최저점수
+    	- min_csat_score - 대학수학능력시험 최저점수
 
   - #### Student
     - 학생 정보 테이블
+    	- id - 학생 아이디 
+    	- name - 학생 이름
+    	- age - 학생 나이
+
 
   - #### Entrance_grade 
     - 학생 입시점수 테이블
+    	- college_id - 대학교 아이디 
+    	- id - 학생 아이디 
+    	- exam_type - 입시 시험 종류
+    	- score - 수시 점수
+    	- csat_score - 대학수학능력 시험 점수
+    	- entrance_yn - 입학 여부
 
   - #### Dae_cd
     - 대코드 테이블
+    	- dae_code - 대코드
+    	- dae_nm - 대코드 명
 
   - #### So_cd
     - 소코드 테이블
+    	- so_code - 소코드
+    	- dae_code - 대코드
+    	- so_nm - 소코드 명
 
  - ### 쿼리 예시 
  #### 부정입학이 `아닌경우`
