@@ -85,12 +85,14 @@
 			AND sd.id = eg.id
 			AND cc.college_id = #{college_id}
 			AND ce.exam_type = #{exam_type}
-			AND <![CDATA[
-					( eg.score < ce.min_score
-				]]>
-			OR <![CDATA[
-					eg.csat_score > ce.min_csat_score)
-				]]>			
+			AND 
+			<![CDATA[
+				(
+					eg.score < ce.min_score
+					OR 
+					eg.csat_score > ce.min_csat_score 
+				)
+			]]>			
 			
      </select>
      
