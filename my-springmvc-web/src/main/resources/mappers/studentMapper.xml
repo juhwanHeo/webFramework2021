@@ -55,8 +55,7 @@
 			AND ce.exam_type = #{exam_type}
 			AND <![CDATA[
 					eg.score >= ce.min_score
-				]]>
-			AND <![CDATA[
+			AND 
 					eg.csat_score <= ce.min_csat_score
 				]]>			
      </select>
@@ -93,6 +92,9 @@
 					eg.csat_score > ce.min_csat_score 
 				)
 			]]>			
+			<if test="entrance_yn != null">
+				AND eg.entrance_yn = #{entrance_yn}
+			</if>
 			
      </select>
      

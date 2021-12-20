@@ -40,11 +40,8 @@ public class StudentService {
 		try {
 			List<EntranceGrade> passList = studentDAO.getPassList(map);
 			List<EntranceGrade> failList = studentDAO.getFailList(map);
-			List<EntranceGrade> bujungList = new ArrayList<>();
-			
-			for (EntranceGrade fail : failList) {
-				if (fail.isPass()) bujungList.add(fail);
-			}
+			map.put("entrance_yn", "Y");
+			List<EntranceGrade> bujungList = studentDAO.getFailList(map);
 
 			result.put("passList", passList);
 			result.put("failList", failList);
